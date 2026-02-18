@@ -21,60 +21,50 @@ A full-stack Task Management application built with **React**, **Node.js**, **Ex
 ---
 
 ##  Project Structure
-task-manager
-Backend (Node.js + Express API)
+Backend (Node.js + Express)
 
-backend/config
+##  Main Entry->
+backend/server.js – Express app entry point
+backend/package.json
+backend/.env.example
+
+## Configuration->
 backend/config/db.js – MongoDB connection
 
-backend/controllers
-backend/controllers/taskController.js – Handles req/res, calls service
-
-backend/services
-backend/services/taskService.js – Business logic + DB queries (no req/res)
-
-backend/models
+## Architecture Layers->
 backend/models/Task.js – Mongoose Task schema
-
-backend/routes
-backend/routes/tasks.js – URL mapping + validation only
-
-backend/middleware
+backend/services/taskService.js – Business logic & DB operations
+backend/controllers/taskController.js – Handles request/response
+backend/routes/tasks.js – API routes & validation
 backend/middleware/errorHandler.js – Global error handler
 
-backend/.env.example
-backend/package.json
-backend/server.js – Express app entry point
+## Frontend (React + Vite)
 
-Frontend (React + Vite)
-
-frontend ->
-
-frontend/src/api
-frontend/src/api/axios.js – Axios instance with interceptors
-frontend/src/api/tasks.js – Task API functions
-
-frontend/src/components
-frontend/src/components/FilterBar.jsx – Search + status filter
-frontend/src/components/Modal.jsx – Edit task modal
-frontend/src/components/StatsBar.jsx – Stats + progress bar
-frontend/src/components/TaskCard.jsx – Individual task display
-frontend/src/components/TaskForm.jsx – Create/Edit form
-
-frontend/src/hooks
-frontend/src/hooks/useTasks.js – Custom hook (all task state logic)
-
-frontend/src/styles
-frontend/src/styles/global.css – CSS variables + global styles
-
-frontend/src/App.jsx – Root component
+## Main Entry->
 frontend/src/main.jsx – React entry point
-
+frontend/src/App.jsx – Root component
 frontend/index.html
 frontend/vite.config.js
 frontend/package.json
 
-Root Files
+## API Layer->
+frontend/src/api/axios.js – Axios instance
+frontend/src/api/tasks.js – Task API functions
+
+## Components->
+FilterBar.jsx – Search + status filter
+Modal.jsx – Edit task modal
+StatsBar.jsx – Stats + progress bar
+TaskCard.jsx – Task display card
+TaskForm.jsx – Create/Edit form
+
+## Custom Hooks->
+useTasks.js – Task state management
+
+## Styles->
+global.css – CSS variables & global styles
+
+## Root Files
 package.json
 README.md
 
@@ -111,20 +101,11 @@ NODE_ENV=development
 > Using MongoDB Atlas?** Replace `MONGODB_URI` with your Atlas connection string:
 > `MONGODB_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/taskmanager`
 
-### 3. Set up Frontend environment (optional)
-
-cd frontend
-cp .env.example .env
-
-
-The default uses the Vite proxy (no change needed for local dev).
-
-### 4. Install all dependencies
-
-From the **root** directory:
-
-bash
-
+. Install all dependencies
+From the root directory:
+npm install
+cd backend && npm install
+cd ../frontend && npm install
 
 ### 5. Run the application
 
