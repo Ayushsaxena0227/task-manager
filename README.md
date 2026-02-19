@@ -2,6 +2,10 @@
 
 A full-stack Task Management application built with **React**, **Node.js**, **Express**, and **MongoDB**.
 
+## vedio demo
+
+https://github.com/user-attachments/assets/0723368e-b8bf-49cb-aec1-1b75afe794d6
+
 ## Screenshots
 
 <img width="1918" height="821" alt="Screenshot 2026-02-19 002517" src="https://github.com/user-attachments/assets/28da081b-5ec6-419b-bb55-8f5e5603706e" />
